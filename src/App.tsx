@@ -1,38 +1,31 @@
 import { 
   Center,
-  ChakraProvider,
   Input,
   Box,
-  Button
+  ChakraProvider
 } from '@chakra-ui/react'
 import { login } from './services/login';
 import { Card } from './components/Card';
 import { Layout } from './components/Layout';
+import CButton from './components/CButton';
 
 function App() {
   return (
     <ChakraProvider>
-      <Box minHeight='100vh' backgroundColor='#9413dc' padding='25px'>
-        <Layout>  
+      <Layout>
+      <Box padding="25px">
           <Card>
-            <Center paddingBottom='2em' color={'white'}>
-              <h1>Seu banco tecnológico!</h1>
+            <Center>
+              <h1>Faça o login</h1>
             </Center>
-            <Box backgroundColor='#FFFFFF' borderRadius='25px' padding='15px' >
-              <Center>
-                <h1>Faça o login</h1>
-              </Center>
-              <Input placeholder="email" />
-              <Input placeholder="password" />
-              <Center>
-                <Button onClick={login} colorScheme='teal' size='sm' width='100%' marginTop='5px'>
-                  Button
-                </Button>
-              </Center>
-            </Box>
+            <Input placeholder="email" />
+            <Input placeholder="password" type='password'/>
+            <Center>
+              <CButton onClick={() => login()}/>
+            </Center>
           </Card>
-        </Layout>
-      </Box>
+        </Box>
+    </Layout>
     </ChakraProvider>
   );
 }

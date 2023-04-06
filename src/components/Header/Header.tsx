@@ -1,13 +1,12 @@
+import { Box, Center, Text } from '@chakra-ui/react'
 import './Header.css'
 
-interface IHeader{
-  title: string
-}
-
-export const Header = ({title}: IHeader) => {
+export const Header = () => {
   return(
-    <>
-      <h1 className='header'>{title}</h1>
-    </>
+    <Box  width='100%'>
+      <Center>
+        <Text fontSize='3xl'>Dio Bank</Text>
+      </Center>
+    </Box>
   )
 }
